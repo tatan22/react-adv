@@ -27,3 +27,23 @@ Qué NO hace
 ❌ No revierte commits.
 
 ❌ No afecta archivos ya confirmados.
+
+## Renombrar Chunks
+
+En este proyecto no se renombran los chunks como se muestra en el video, ya que el proyecto está creado con Create React App (CRA), el cual utiliza Webpack encapsulado.
+
+En este entorno no se tiene acceso a la configuración de Webpack, por lo que no es posible controlar ni personalizar los nombres de los chunks.
+
+CRA genera los chunks automáticamente usando nombres internos y hashes para:
+
+- Optimizar el caché del navegador
+
+- Evitar conflictos entre archivos
+
+- Mejorar el rendimiento en producción
+
+Por esta razón, aunque el lazy loading sí funciona correctamente, el renombrado manual de chunks ya no aplica ni es necesario en este tipo de proyecto.
+
+## Uso Nested Lazy Routes
+
+> Se utiliza el componente `Outlet` que se encuentra en el archivo `App.jsx` para mostrar las rutas anidadas.

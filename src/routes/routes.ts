@@ -11,27 +11,24 @@ interface Route {
 }
 
 // Para trabajar con lazy load los componentes deben ser exportados pro default
-const lazy1 = lazy(() => import("../01-Lazyload/pages/LazyPages1"));
-const lazy2 = lazy(() => import("../01-Lazyload/pages/LazyPages2"));
-const lazy3 = lazy(() => import("../01-Lazyload/pages/LazyPages3"));
+const lazyLayout = lazy(() => import("../01-Lazyload/layout/LazyLayout"));
+const noLazy = lazy(() => import("../01-Lazyload/pages/NoLazy"));
 
 export const routes: Route[] = [
 	{
-		to: "/lazy1",
-		path: "/lazy1",
-		Component: lazy1,
-		name: "Lazy-1",
+		/*
+		 * se debe especificar el path de la ruta y el componente que
+		 * se va a mostrar para la version 6 de react router dom
+		 */
+		path: "/lazyload/*",
+		to: "/lazyload",
+		Component: lazyLayout,
+		name: "LazyLayout",
 	},
 	{
-		to: "/lazy2",
-		path: "/lazy2",
-		Component: lazy2,
-		name: "Lazy-2",
-	},
-	{
-		to: "/lazy3",
-		path: "/lazy3",
-		Component: lazy3,
-		name: "Lazy-3",
+		to: "/no-lazy",
+		path: "/no-lazy",
+		Component: noLazy,
+		name: "No-Lazy",
 	},
 ];
