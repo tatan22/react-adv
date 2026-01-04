@@ -2,7 +2,7 @@ import { ProductButtons } from "../components/ProductButton";
 import { ProductCard } from "../components/ProductCard";
 import { ProductImage } from "../components/ProductImage";
 import { ProductTitle } from "../components/ProductTitle";
-
+import "../styles/custom-styles.css";
 
 const products = {
 	id: "1",
@@ -22,27 +22,34 @@ export const ShoppingPage = () => {
 					flexWrap: "wrap",
 				}}
 			>
-				<ProductCard product={products}>
-					<ProductImage img={products.img} />
-					<ProductTitle title={products.title} />
-					<ProductButtons />
-				</ProductCard>
-
-				{/* Otras forma común de verlo */}
-				<ProductCard product={products}>
-					<ProductCard.Image img={products.img} />
-					<ProductCard.Title title={"Title Second method"} />
-					<ProductCard.Buttons />
+				<ProductCard product={products} className="bg-dark text-white">
+					<ProductCard.Image className="custom-image" />
+					<ProductCard.Title  className="text-bold"/>
+					<ProductCard.Buttons className="custom-buttons"/>
 				</ProductCard>
 
 				{/* Combinación  de los dos anteriores */}
-				<ProductCard product={products}>
-					<ProductImage img={products.img} />
-					<ProductTitle title={"Title Second method"} />
-					<ProductButtons />
+				<ProductCard product={products} className="bg-dark text-white">
+					<ProductImage className="custom-image" style={{boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)'}}/>
+					<ProductTitle className="text-bold" />
+					<ProductButtons className="custom-buttons" />
 				</ProductCard>
-				
 			</div>
-		</div>
+
+				{/* Con uso de style*/}
+				<ProductCard product={products} style={{ backgroundColor: "#70D1F8"}} >
+					<ProductImage style={{
+						boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.5)'
+					}} />
+					<ProductTitle style={{
+						fontWeight:'bold'
+					}} />
+					<ProductButtons  style={{
+						display:'flex',
+						justifyContent:'end',
+					}}/>
+				</ProductCard>
+			</div>
+		
 	);
 };
