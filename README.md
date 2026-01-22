@@ -26,3 +26,10 @@ Una función es en general un bloque de código que se ejecuta cuando se llama a
 > Pero cuando desestructuramos el método de un objeto se convierte en una función.
 
 Por eso el getFieldProps se convierte en una función y retorna un objeto con las propiedades que se necesitan.
+
+## Formik Dynamic y Custom forms
+
+Los formularios se definen a través de un archivo JSON, el cual determina la estructura y propiedades del formulario. En el archivo JSON se definen los campos del formulario y sus propiedades.
+
+Esta respuesta en un archivo JSON es recibida por el componente Formik y se utiliza para construir el formulario.
+

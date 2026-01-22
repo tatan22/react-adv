@@ -11,12 +11,13 @@ export interface FormikAbstractionProps {
 	placeholder?: string;
 	[x: string]: any;
 }
+export interface SelectOption {
+	id: string;
+	label: string;
+}
 
-export interface FormikSelectProps extends Omit<FormikAbstractionProps, 'type'> {}
+export interface FormikSelectProps extends Omit<FormikAbstractionProps, 'type'> {
+	option?: SelectOption[]
+}
 
-// export interface FormikSelectProps {
-// 	label: string;
-// 	name: string;
-// 	placeholder?: string;
-// 	[x: string]: any;
-// }
+

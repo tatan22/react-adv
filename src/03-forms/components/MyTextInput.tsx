@@ -7,7 +7,7 @@ export const MyTextInput = ({ label, ...props }: FormikAbstractionProps) => {
 	return (
 		<>
 			<label htmlFor={props.id || props.name}>{label}</label>
-			<input className="text-input" {...field} type="text" />
+			<input className="text-input" {...field} {...props} type="text" />
 			<ErrorMessage
 				name={props.name}
 				component="span"
